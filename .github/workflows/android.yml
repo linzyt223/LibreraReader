@@ -2,12 +2,12 @@ name: Build Librera Reader
 
 # Define when the workflow should be triggered
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      docker_images:
+        description: '请填写docker镜像名称 多个用英文逗号分开'
+        required: true
+        default: 'alpine:latest'  # 设置默认的 Docker 镜像列表
 
 jobs:
   build:
