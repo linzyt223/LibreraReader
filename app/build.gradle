@@ -124,9 +124,9 @@ android {
                     appIcon      : "@mipmap/icon_pdf_reader",
                     appRoundIcon : "@mipmap/icon_pdf_reader",
                     appGdriveKey : "",
-                    admobAppId   : librera_admobAppId,
-                    admobBannerId: librera_admobBannerId,
-                    admobFullId  : librera_admobFullId,
+                    admobAppId   : "",
+                    admobBannerId: "",
+                    admobFullId  : "",
                     appSafeMode  : "false"
             ]
         }
@@ -152,9 +152,9 @@ android {
                     appIcon      : "@mipmap/icon_pdf_classic",
                     appRoundIcon : "@mipmap/launcher_classic",
                     appGdriveKey : "",
-                    admobAppId   : pdf_classic_admobAppId,
-                    admobBannerId: pdf_classic_admobBannerId,
-                    admobFullId  : pdf_classic_admobFullId,
+                    admobAppId   : "",
+                    admobBannerId: "",
+                    admobFullId  : "",
                     appSafeMode  : "true"
             ]
         }
@@ -166,9 +166,9 @@ android {
                     appIcon      : "@mipmap/icon_pdf_droid",
                     appRoundIcon : "@mipmap/launcher_droid",
                     appGdriveKey : "",
-                    admobAppId   : ebooka_admobAppId,
-                    admobBannerId: ebooka_admobBannerId,
-                    admobFullId  : ebooka_admobFullId,
+                    admobAppId   : "",
+                    admobBannerId: "",
+                    admobFullId  : "",
                     appSafeMode  : "false"
             ]
         }
@@ -180,9 +180,9 @@ android {
                     appIcon      : "@mipmap/icon_pdf_2",
                     appRoundIcon : "@mipmap/launcher_pdf_v2",
                     appGdriveKey : "",
-                    admobAppId   : pdf_v2_admobAppId,
-                    admobBannerId: pdf_v2_admobBannerId,
-                    admobFullId  : pdf_v2_admobFullId,
+                    admobAppId   : "",
+                    admobBannerId: "",
+                    admobFullId  : "",
                     appSafeMode  : "false"
             ]
         }
@@ -194,9 +194,9 @@ android {
                     appIcon      : "@mipmap/icon_tts_reader_app",
                     appRoundIcon : "@mipmap/launcher_tts_reader_app",
                     appGdriveKey : "",
-                    admobAppId   : tts_reader_admobAppId,
-                    admobBannerId: tts_reader_admobBannerId,
-                    admobFullId  : tts_reader_admobFullId,
+                    admobAppId   : "",
+                    admobBannerId: "",
+                    admobFullId  : "",
                     appSafeMode  : "false"
             ]
         }
@@ -208,9 +208,9 @@ android {
                     appIcon      : "@mipmap/icon_epub_reader",
                     appRoundIcon : "@mipmap/launcher_epub_reader",
                     appGdriveKey : "",
-                    admobAppId   : epub_reader_admobAppId,
-                    admobBannerId: epub_reader_admobBannerId,
-                    admobFullId  : epub_reader_admobFullId,
+                    admobAppId   : "",
+                    admobBannerId: "",
+                    admobFullId  : "",
                     appSafeMode  : "false"
             ]
         }
