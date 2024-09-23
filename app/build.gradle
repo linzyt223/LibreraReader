@@ -35,7 +35,7 @@ android {
     defaultConfig {
         namespace "com.foobnix.pdf.info"
         minSdkVersion 21
-        minSdk 16
+        minSdk 21
         targetSdk project.targetSdk
         versionCode codeNumber
         versionName versionNumber
@@ -102,7 +102,7 @@ android {
     flavorDimensions.add("version")
     productFlavors {
         fdroid {
-            minSdk 16
+            minSdk 21
             dimension "version"
             applicationId "com.foobnix.pro.pdf.reader"
             manifestPlaceholders = [
