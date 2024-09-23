@@ -13,6 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
     # Set Current Date As Env Variable
       - name: Set current date as env variable
         run: echo "date_today=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
@@ -60,8 +62,7 @@ jobs:
      #   packages: # optional, default is tools platform-tools
        
             
-      - name: Checkout code
-        uses: actions/checkout@v4
+      
 
       - name: Build with Gradle
         env:
