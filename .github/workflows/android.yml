@@ -24,7 +24,7 @@ jobs:
       - name: Build with Gradle
         run: 
               cd Builder
-              ./link_to_mupdf_x.x.x.sh
+              ./link_to_mupdf_1.24.6.sh
               cd ..
               ./gradlew assembleFdroid
 
