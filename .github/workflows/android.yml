@@ -33,12 +33,12 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
- #    - name: Set up Android SDK
-   #    uses: android-actions/setup-android@v2
-   #    with:
-   #     api-level: 30
-     #   build-tools: '30.0.3'
-    #    ndk: ${{ env.ANDROID_NDK_VERSION }}
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          api-level: 30
+          build-tools: '30.0.3'
+          ndk: "22.1.7171670"
     # Cache gradle dependencies
   #   - name: Cache Gradle packages
   #     uses: actions/cache@v2
