@@ -17,22 +17,22 @@ jobs:
       ANDROID_NDK_VERSION: "22.1.7171670"
       JAVA_HOME: /usr/lib/jvm/java-17-openjdk
     steps:   
-    - name: Set up JDK 17
-      uses: actions/setup-java@v2
-      with:
+     - name: Set up JDK 17
+       uses: actions/setup-java@v2
+       with:
         distribution: 'adopt'
         java-version: '17'
 
-    - name: Set up Android SDK
-      uses: android-actions/setup-android@v2
-      with:
+     - name: Set up Android SDK
+       uses: android-actions/setup-android@v2
+       with:
         api-level: 30
         build-tools: '30.0.3'
         ndk: ${{ env.ANDROID_NDK_VERSION }}
     # Cache gradle dependencies
-    - name: Cache Gradle packages
-      uses: actions/cache@v2
-      with:
+     - name: Cache Gradle packages
+       uses: actions/cache@v2
+       with:
         path: |
           ~/.gradle/caches
           ~/.gradle/wrapper
@@ -40,11 +40,11 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-
           
-    - name: Checkout code
-      uses: actions/checkout@v4
+     - name: Checkout code
+       uses: actions/checkout@v4
 
-    - name: Build with Gradle
-      run:  |
+     - name: Build with Gradle
+       run:  |
               sudo apt-get install mesa-common-dev libxcursor-dev libxrandr-dev libxinerama-dev libglu1-mesa-dev libxi-dev pkg-config libgl-dev
               cd Builder
               ./link_to_mupdf_1.24.6.sh
@@ -52,8 +52,8 @@ jobs:
               ./gradlew assembleFdroid
 
 
-      - name: Archive build artifacts
-        uses: actions/upload-artifact@v3
-        with:
+     - name: Archive build artifacts
+       uses: actions/upload-artifact@v3
+       with:
           name: build-artifact
           path: app/build/outputs
