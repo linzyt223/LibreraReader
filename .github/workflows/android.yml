@@ -79,7 +79,7 @@ jobs:
               ./link_to_mupdf_1.24.6.sh
               cd ..
               ./gradlew assembleFdroid
-              ls app/build/outputs/apk/fdroid/release/Librera
+              ls app/build/outputs/apk/fdroid/release
 
 
       - name: Archive build artifacts
