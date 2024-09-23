@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "27643498052",
+    "project_id": "lreader-da80b",
+    "storage_bucket": "lreader-da80b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27643498052:android:ac0185d39031af4b03f611",
+        "android_client_info": {
+          "package_name": "com.foobnix.pdf.info"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYfXViui8BmsmxjYYEeQFXqfc9y-1JdvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27643498052:android:aa1bb60592f7c6b903f611",
+        "android_client_info": {
+          "package_name": "com.foobnix.pdf.reader.a1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYfXViui8BmsmxjYYEeQFXqfc9y-1JdvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
