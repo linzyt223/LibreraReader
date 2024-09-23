@@ -20,6 +20,7 @@ jobs:
 
       - name: Build with Gradle
         run:  |
+              sudo apt-get install mesa-common-dev libxcursor-dev libxrandr-dev libxinerama-dev libglu1-mesa-dev libxi-dev pkg-config libgl-dev
               cd Builder
               ./link_to_mupdf_1.24.6.sh
               cd ..
