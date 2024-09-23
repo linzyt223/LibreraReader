@@ -34,7 +34,7 @@ android {
 
     defaultConfig {
         namespace "com.foobnix.pdf.info"
-        minSdk project.minSdk
+        minSdk 16
         targetSdk project.targetSdk
         versionCode codeNumber
         versionName versionNumber
