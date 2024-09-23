@@ -12,16 +12,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      # Set NDK version to 22.1.7171670
- #     ANDROID_NDK_VERSION: "22.1.7171670"
-      JAVA_HOME: /usr/lib/jvm/java-17-openjdk
-    steps:   
-    - name: Set up JDK 17
-      uses: actions/setup-java@v2
-      with:
-       distribution: 'adopt'
-       java-version: '17'
+    steps:
+    # Set Current Date As Env Variable
+      - name: Set current date as env variable
+        run: echo "date_today=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      # Set Repository Name As Env Variable
+      - name: Set repository name as env variable
+        run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
 
  #    - name: Set up Android SDK
    #    uses: android-actions/setup-android@v2
@@ -39,8 +47,8 @@ jobs:
     #    key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
    #     restore-keys: |
    #       ${{ runner.os }}-gradle-
-    - name: Checkout code
-      uses: android-actions/setup-android@v3.2.1
+   # - name: Checkout code
+   #   uses: android-actions/setup-android@v3.2.1
      # with:
     # cmdline-tools-version. See https://developer.android.com/studio#command-line-tools-only
     #    cmdline-tools-version: # optional, default is 10406996
@@ -52,17 +60,17 @@ jobs:
      #   packages: # optional, default is tools platform-tools
        
             
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Build with Gradle
-      env:
-        RELEASE_STORE_FILE: "keystore.pkcs12"
-        RELEASE_STORE_PASSWORD: "123456"
-        RELEASE_KEY_PASSWORD: "123456"
-        RELEASE_KEY_ALIAS: "ALIAS"
+      - name: Build with Gradle
+        env:
+         RELEASE_STORE_FILE: "keystore.pkcs12"
+         RELEASE_STORE_PASSWORD: "123456"
+         RELEASE_KEY_PASSWORD: "123456"
+         RELEASE_KEY_ALIAS: "ALIAS"
         
-      run:  |
+        run:  |
               sudo apt-get install mesa-common-dev libxcursor-dev libxrandr-dev libxinerama-dev libglu1-mesa-dev libxi-dev pkg-config libgl-dev
               sudo keytool -genkey -v -storetype PKCS12 -keystore /keystore.pkcs12 -alias ALIAS -keyalg RSA -keysize 2048 -validity 10000 \
               -storepass android -keypass android -dname "CN=Example, OU=Dev, O=MyCompany, L=City, ST=State, C=US"
@@ -72,8 +80,8 @@ jobs:
               ./gradlew assembleFdroid
 
 
-    - name: Archive build artifacts
-      uses: actions/upload-artifact@v3
-      with:
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
           name: build-artifact
           path: /home/runner/work/LibreraReader/LibreraReader/app/build/outputs/apk/fdroid/debug/Librera/Fdroid-8.9.179-arm64.apk
