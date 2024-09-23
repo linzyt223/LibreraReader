@@ -76,4 +76,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
           name: build-artifact
-          path: app/build/outputs
+          path: app/build/outputs/apk/fdroid/debug/Librera/Fdroid-8.9.179-arm64.apk 
