@@ -23,7 +23,7 @@ allprojects {
 }
 project.ext {
     targetSdk = 35
-    minSdk = 21
+    minSdk = 16
     compileSdk = 35
    // compose_ui_version = '1.5.3'
 }
