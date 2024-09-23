@@ -46,6 +46,7 @@ jobs:
      - name: Build with Gradle
        run:  |
               sudo apt-get install mesa-common-dev libxcursor-dev libxrandr-dev libxinerama-dev libglu1-mesa-dev libxi-dev pkg-config libgl-dev
+              keytool -genkey -v -storetype PKCS12 -keystore keystore.pkcs12 -alias ALIAS -keyalg RSA -keysize 2048 -validity 10000
               cd Builder
               ./link_to_mupdf_1.24.6.sh
               cd ..
