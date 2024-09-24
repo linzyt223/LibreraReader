@@ -79,10 +79,12 @@ jobs:
               sudo keytool -genkey -v -storetype PKCS12 -keystore /keystore.pkcs12 -alias ALIAS -keyalg RSA -keysize 2048 -validity 10000 \
               -storepass android -keypass android -dname "CN=Example, OU=Dev, O=MyCompany, L=City, ST=State, C=US"
               cd Builder
-              ./link_to_mupdf_master.sh
-              cd ..
-              ./gradlew assembleFdroid
+              ./all_release.sh
               ls app/build/outputs/apk/fdroid/release
+    #          ./link_to_mupdf_master.sh
+   #           cd ..
+  #            ./gradlew assembleFdroid
+              
 
 
       - name: Archive build artifacts
