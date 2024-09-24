@@ -41,7 +41,7 @@ jobs:
         with:
           ndk-version: r26d
           link-to-sdk: true
-      - run: ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./Application.mk
+     # - run: ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./Application.mk
     # Cache gradle dependencies
   #   - name: Cache Gradle packages
   #     uses: actions/cache@v2
@@ -79,7 +79,7 @@ jobs:
               sudo keytool -genkey -v -storetype PKCS12 -keystore /keystore.pkcs12 -alias ALIAS -keyalg RSA -keysize 2048 -validity 10000 \
               -storepass android -keypass android -dname "CN=Example, OU=Dev, O=MyCompany, L=City, ST=State, C=US"
               cd Builder
-              ./link_to_mupdf_1.24.6.sh
+              ./link_to_mupdf_master.sh
               cd ..
               ./gradlew assembleFdroid
               ls app/build/outputs/apk/fdroid/release
