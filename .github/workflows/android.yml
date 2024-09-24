@@ -79,7 +79,7 @@ jobs:
               sudo keytool -genkey -v -storetype PKCS12 -keystore /keystore.pkcs12 -alias ALIAS -keyalg RSA -keysize 2048 -validity 10000 \
               -storepass android -keypass android -dname "CN=Example, OU=Dev, O=MyCompany, L=City, ST=State, C=US"
               cd Builder
-              ./link_to_mupdf_master.sh fdroid
+              ./link_to_mupdf_1.24.6.sh fdroid
               cd ..
               ./gradlew assembleFdroid
        #       ./all-release.sh
